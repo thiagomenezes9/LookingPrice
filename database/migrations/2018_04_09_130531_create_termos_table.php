@@ -18,11 +18,17 @@ class CreateTermosTable extends Migration
             $table->string('termo');
             $table->dateTime('data');
             $table->integer('user_id')->unsigned();
-            $table->timestamps();
-
             $table->foreign('user_id')->references('id')->on('users');
 
+            $table->timestamps();
         });
+
+        Schema::table('produtos', function(Blueprint $table){
+            $table->foreign('categoria_id')->references('id')->on('cotegorias');
+        });
+
+
+
     }
 
     /**
