@@ -14,13 +14,17 @@ class CreateProdutosTable extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('descricao');
             $table->string('cd_barras');
             $table->string('marca');
             $table->binary('foto');
-            $table->integer('categoria_id')->unsigned();
+           // $table->integer('categoria_id')->unsigned()->nullable();
+            $table->unsignedInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('cotegorias');
+
+
 
             $table->timestamps();
         });
@@ -28,6 +32,7 @@ class CreateProdutosTable extends Migration
         Schema::table('produtos', function(Blueprint $table){
             DB::statement('ALTER TABLE produtos MODIFY foto LONGBLOB');
         });
+
 
     }
 

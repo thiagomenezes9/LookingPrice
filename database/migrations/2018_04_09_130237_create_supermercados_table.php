@@ -28,8 +28,8 @@ class CreateSupermercadosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('users', function(Blueprint $table){
-            DB::statement('ALTER TABLE users MODIFY foto LONGBLOB');
+        Schema::table('supermercados', function(Blueprint $table){
+            DB::statement('ALTER TABLE supermercados MODIFY foto LONGBLOB');
         });
 
     }
