@@ -23,9 +23,7 @@ class CreateTermosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('produtos', function(Blueprint $table){
-            $table->foreign('categoria_id')->references('id')->on('cotegorias');
-        });
+
 
 
 

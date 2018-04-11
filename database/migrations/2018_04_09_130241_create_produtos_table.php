@@ -19,8 +19,9 @@ class CreateProdutosTable extends Migration
             $table->string('cd_barras');
             $table->string('marca');
             $table->binary('foto');
-           // $table->integer('categoria_id')->unsigned()->nullable();
-            $table->unsignedInteger('categoria_id');
+            $table->integer('categoria_id')->unsigned();
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+            //$table->unsignedInteger('categoria_id');
 
 
 
@@ -32,9 +33,9 @@ class CreateProdutosTable extends Migration
             DB::statement('ALTER TABLE produtos MODIFY foto LONGBLOB');
         });
 
-        Schema::table('produtos', function(Blueprint $table){
-            $table->foreign('categoria_id')->references('id')->on('cotegorias');
-        });
+        //Schema::table('produtos', function(Blueprint $table){
+          //  $table->foreign('categoria_id')->references('id')->on('cotegorias');
+        //});
 
 
     }
