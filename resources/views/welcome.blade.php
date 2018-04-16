@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>LookingPrice</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,16 +79,30 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Looking Price
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <form class="form-horizontal" action="">
+                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}"/>
+
+                        <div class></div>
+                        <div class="col-xl-12">
+                            <input name="termo" value="{{ old('termo') }}" type="text" class="form-control input-lg"
+                                   id="termo" placeholder="Digite o nome do  produto" autofocus>
+                        </div>
+
+                        Botao pesquisa do lado do campo <br>
+
+
+
+                    vc esta na cidade TAL para mudar clique aki <br>
+
+
+                    APOS CLICAR
+
+                    Cidade: COMBOBOX com as cidades que possui cidade
+
+                </form>
             </div>
         </div>
     </body>
