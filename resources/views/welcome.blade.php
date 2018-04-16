@@ -1,109 +1,56 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
 
-        <title>LookingPrice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Looking Price
-                </div>
-
-                <form class="form-horizontal" action="">
-                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}"/>
-
-                        <div class></div>
-                        <div class="col-xl-12">
-                            <input name="termo" value="{{ old('termo') }}" type="text" class="form-control input-lg"
-                                   id="termo" placeholder="Digite o nome do  produto" autofocus>
-                        </div>
-
-                        Botao pesquisa do lado do campo <br>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-red.min.css"/>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 
+    <title>LookingPrice</title>
 
-                    vc esta na cidade TAL para mudar clique aki <br>
+
+</head>
+<body>
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title"></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+                @if(Auth::check())
+                    <a class="mdl-navigation__link" style="color:black" href="">Home</a>
+                @else
+                    <i class="material-icons" style="color:black">fingerprint</i>
+                    <a class="mdl-navigation__link" style="color:black" href="{{route('auth.login')}}">Login</a>
+
+                    <i class="material-icons" style="color:black">person_add</i>
+                    <a class="mdl-navigation__link" style="color:black" href="{{route('auth.register')}}">Registrar</a>
+                @endif
+            </nav>
 
 
-                    APOS CLICAR
-
-                    Cidade: COMBOBOX com as cidades que possui cidade
-
-                </form>
-            </div>
         </div>
-    </body>
+    </header>
+
+    <main class="mdl-layout__content">
+
+        <h1>Looking Price</h1>
+
+
+    </main>
+</div>
+
+
+</div>
+
+
+</body>
 </html>

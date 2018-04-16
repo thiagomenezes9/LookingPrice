@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    protected $fillable = ['descricao','cd_barras','marca','foto','categoria_id'];
+    protected $fillable = ['descricao','cd_barras','foto','categoria_id','marca_id'];
 
 
     public function preco(){
@@ -20,6 +20,10 @@ class Produto extends Model
 
     public function categoria(){
         return $this->belongsTo('App\Categoria');
+    }
+
+    public function marca(){
+        return $this->belongsTo('App\Marca');
     }
 
 
