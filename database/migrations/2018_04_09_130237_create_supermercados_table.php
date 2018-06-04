@@ -25,6 +25,9 @@ class CreateSupermercadosTable extends Migration
             $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades');
 
+            $table->integer('segmento_id')->unsigned();
+            $table->foreign('segmento_id')->references('id')->on('segmentos');
+
             $table->timestamps();
         });
 

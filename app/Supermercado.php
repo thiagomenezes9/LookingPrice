@@ -25,5 +25,9 @@ class Supermercado extends Model
         return $this->hasMany('App\User','supermercado_id');
     }
 
+    public function segmento(){
+        return $this->belongsTo('App\Segmento');
+    }
+
 
 }
