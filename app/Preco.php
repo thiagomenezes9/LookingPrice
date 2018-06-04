@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preco extends Model
 {
-    protected $fillable = ['valor','supermercado_id','produto_id'];
+    protected $fillable = ['valor','ativo','supermercado_id','produto_id'];
 
 
     public function supermercado(){

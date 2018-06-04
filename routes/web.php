@@ -10,15 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-*/
 
 Route::get('/', array('as' => 'auth.index', 'uses' => 'AuthController@index'));
 
@@ -47,42 +39,10 @@ Route::group(['middleware'=>['web']],function(){
 
     });
 
-
-
-
-
-    //Route::get('publicacoes/tv','PublicacaoController@createTV')->name('PublicacaoCreateTV');
-    //Route::get('publicacoes/site','PublicacaoController@createSite')->name('PublicacaoCreateSite');
-
-
-    //Route::group(['middleware'=>'auth'],function(){
-
-      //  Route::resource('coordenacoes','CoordenacaoController');
-        //Route::resource('usuarios','UserController');
-        //Route::resource('publicacoes','PublicacaoController');
-
-    //});
-
-
-//    Route::get('publicacoes/desativar/{id}','PublicacaoController@desativar')->name('PublicacaoDesativar');
-    //Route::post('publicacoes/desativar/{id}','PublicacaoController@desativar')->name('PublicacaoDesativar');
-    //Route::get('publicacoes/publicar/{id}','PublicacaoController@publicar')->name('PublicacaoPublicar');
-
-
-
-    //Route::get('/tv',array('as' => 'dashboard', 'uses' => 'DashboardController@tv'));
-
-
-
     Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset','Auth\ResetPasswordController@reset');
-
-
-
-//    Route::get('/perfil','AuthController@perfil')->name('perfil');
-    //Route::get('/perfil',array('as' => 'perfil', 'uses' => 'DashboardController@perfil'));
 
 });
 

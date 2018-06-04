@@ -16,6 +16,7 @@ class CreateOfertasTable extends Migration
         Schema::create('ofertas', function (Blueprint $table) {
             $table->increments('id');
             $table->double('valor');
+            $table->binary('ativo');
             $table->integer('supermercado_id')->unsigned();
             $table->integer('produto_id')->unsigned();
             $table->dateTime('dt_ini');
